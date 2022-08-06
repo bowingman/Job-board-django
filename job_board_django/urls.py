@@ -16,10 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-import authapp
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('authapp.urls')),
     path('users/', include('user.urls')),
+    path('jobs/', include('job.urls')),
 ]
