@@ -1,3 +1,17 @@
-from django.shortcuts import render
+from re import U
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
-# Create your views here.
+from authapp.models import User
+from authapp.serializers import UserSerializer
+
+
+class UserList(ListCreateAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+    permission_classes = []
+
+
+class UserDetail(RetrieveUpdateDestroyAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+    permission_classes = []

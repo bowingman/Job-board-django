@@ -21,4 +21,5 @@ import authapp
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('authapp.urls')),
+    path('users/', include('user.urls')),
 ]
